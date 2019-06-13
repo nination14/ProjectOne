@@ -6,15 +6,6 @@ Start- 06/08/2019
 End- 06/13/2019
 *****************************************/
 
-/*** Gives A Random Color Backgroud */
-function random_bg_color() {
-    var red = Math.floor(Math.random() * 256);
-    var green = Math.floor(Math.random() * 256);
-    var blue = Math.floor(Math.random() * 256);
-    var bgColor = "rgb(" + red + ','+ green + ','+ blue +")";
-    document.body.style.background = bgColor;
-}
-
 /*** Array of Objects (Quotes) */
 var quotes = [ 
     {
@@ -55,7 +46,7 @@ function getRandomQuote () {
     
     var randomNumber = Math.floor(Math.random() * quotes.length);
     return quotes[randomNumber];
-}
+};
     
 
 /*** Function That Prints Quotes & Gets A Random Color Background */
@@ -75,10 +66,20 @@ function printQuote ()
     document.getElementById('quote-box').innerHTML = htmlString;
     
     random_bg_color();
- }
+ };
 
- printQuote(); 
-setInterval(printQuote, 25000);
+/*** Gives A Random Color Backgroud */
+function random_bg_color() {
+    var red = Math.floor(Math.random() * 255);
+    var green = Math.floor(Math.random() * 255);
+    var blue = Math.floor(Math.random() * 255);
+    var bgColor = "rgb(" + red + ','+ green + ','+ blue +")";
+    document.body.style.background = bgColor;
+};
+
+
+printQuote(); 
+setInterval(function(){ printQuote() }, 25000);
 
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
