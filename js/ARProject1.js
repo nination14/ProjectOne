@@ -46,6 +46,14 @@ function getRandomQuote () {
     
     var randomNumber = Math.floor(Math.random() * quotes.length);
     return quotes[randomNumber];
+
+if(random === currentNumber) {
+    random;
+}
+else {
+    currentNumber = random;
+}
+return random
 };
     
 
@@ -76,7 +84,6 @@ function random_bg_color() {
     var bgColor = "rgb(" + red + ','+ green + ','+ blue +")";
     document.body.style.background = bgColor;
 };
-
 
 printQuote(); 
 setInterval(function(){ printQuote() }, 25000);
